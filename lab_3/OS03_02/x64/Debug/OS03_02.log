@@ -1,0 +1,3 @@
+﻿  OS03_02.cpp
+C:\OS\lab_3\OS03_02\OS03_02.cpp(22,48): warning C4244: 'argument': conversion from 'float' to 'DWORD', possible loss of data
+  OS03_02.vcxproj -> C:\OS\lab_3\x64\Debug\OS03_02.exe

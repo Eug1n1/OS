@@ -19,11 +19,11 @@ int main()
 		Sleep(1000);
 	}
 
-	//WaitForMultipleObjects(size, processes, FALSE, INFINITY);
-	//for (int i = 0; i < size; i++)
-	//{
-	//	CloseHandle(processes[i]);
-	//}
+	WaitForMultipleObjects(size, processes, FALSE, INFINITY);
+	for (int i = 0; i < size; i++)
+	{
+		CloseHandle(processes[i]);
+	}
 
 	return EXIT_SUCCESS;
 }

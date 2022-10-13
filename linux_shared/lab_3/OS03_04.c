@@ -7,7 +7,8 @@ int main()
 
     for (int i = 0; i < 1000; i++)
     {
-        printf("%d - %d", i, pid);
+        printf("%d - %d\n", i, pid);
+        fflush(stdout);
         sleep(1);
     }
 }

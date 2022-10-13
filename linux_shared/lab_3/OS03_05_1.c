@@ -7,7 +7,8 @@ int main()
 
     for (int i = 0; i < 50; i++)
     {
-        printf("child: %d - %d", i, pid);
+        printf("child: %d - %d\n", i, pid);
+        fflush(stdout);
         sleep(1);
     }
 }

@@ -39,5 +39,6 @@ int main()
         std::cout << "ERROR: " << msg << std::endl;
     }
 
+    system("pause");
     return 0;
 }

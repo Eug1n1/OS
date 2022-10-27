@@ -8,6 +8,6 @@ int main()
 	for (int i = 0; i < 1000; i++)
 	{
 		printf("%d - %d\n", pid, i);
-		Sleep(2000);
+		Sleep(1000);
 	}
 }

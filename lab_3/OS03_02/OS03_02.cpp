@@ -10,16 +10,16 @@ int main()
 
 	HANDLE processes[size];
 
-	processes[0] = createProcess(L"C:\\OS\\lab_3\\Debug\\OS03_02_1.exe").hProcess;
-	processes[1] = createProcess(L"C:\\OS\\lab_3\\Debug\\OS03_02_2.exe").hProcess;
+	processes[0] = createProcess(L"C:\\Users\\eug1n1\\Univer\\os\\lab_3\\Debug\\OS03_02_1.exe").hProcess;
+	processes[1] = createProcess(L"C:\\Users\\eug1n1\\Univer\\os\\lab_3\\Debug\\OS03_02_2.exe").hProcess;
 
-	for (int i = 0; i < 30; i++)
+	for (int i = 0; i < 10; i++)
 	{
 		printf("%d - %d\n", pid, i);
 		Sleep(1000);
 	}
 
-	WaitForMultipleObjects(size, processes, FALSE, INFINITY);
+	WaitForMultipleObjects(size, processes, TRUE, INFINITE);
 	for (int i = 0; i < size; i++)
 	{
 		CloseHandle(processes[i]);
@@ -36,7 +36,7 @@ PROCESS_INFORMATION createProcess(LPCWSTR path)
 	ZeroMemory(&startupInfo, sizeof(STARTUPINFO));
 	startupInfo.cb = sizeof(STARTUPINFO);
 
-	if (CreateProcess(path, NULL, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &startupInfo, &processInfo))
+	if (CreateProcessW(path, NULL, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &startupInfo, &processInfo))
 	{
 		std::cout << "Process created" << std::endl;
 	}

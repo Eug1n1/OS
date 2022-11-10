@@ -35,7 +35,7 @@ PROCESS_INFORMATION createProcess(LPCWSTR path, int prty, DWORD_PTR mask)
 	ZeroMemory(&startupInfo, sizeof(STARTUPINFO));
 	startupInfo.cb = sizeof(STARTUPINFO);
 
-	if (CreateProcessW(path, NULL, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &startupInfo, &processInfo))
+	if (CreateProcessW(path, NULL, NULL, NULL, FALSE, CREATE_NEW_CONSOLE | prty, NULL, NULL, &startupInfo, &processInfo))
 	{
 		std::cout << "Process created" << std::endl;
 	}
@@ -43,13 +43,10 @@ PROCESS_INFORMATION createProcess(LPCWSTR path, int prty, DWORD_PTR mask)
 	{
 		std::cout << "Error" << std::endl;
 	}
-	
-	SetPriorityClass(processInfo.hProcess, prty);
-	SetProcessAffinityMask(processInfo.hProcess, mask);
 
-	if (!SetPriorityClass(processInfo.hProcess, prty)) {
-		throw "SetPriorityClass";
-	}
+	//if (!SetPriorityClass(processInfo.hProcess, prty)) {
+	//	throw "SetPriorityClass";
+	//}
 
 	if (!SetProcessAffinityMask(processInfo.hProcess, mask)) {
 		throw "SetProcessAffinityMask";

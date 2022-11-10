@@ -68,6 +68,8 @@ int main()
 
 	printf("processors: %d\n", proc_affinity_bits.count());
 
+	printf("curr_processor: %d\n", GetCurrentProcessorNumber());
+
 	int pref_processor = SetThreadIdealProcessor(GetCurrentThread(), MAXIMUM_PROCESSORS);
 	printf("pref_processor: %d\n", pref_processor);
 

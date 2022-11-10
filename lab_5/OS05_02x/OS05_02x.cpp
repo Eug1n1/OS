@@ -1,18 +1,23 @@
 #include <iostream>
 #include <Windows.h>
+#include <chrono>
 
 void printProcInfo();
 
 int main()
 {
+	auto time = clock();
 	for (int i = 0; i < 1000000; i++)
 	{
 		if (i % 1000 == 0) {
 			printf("i: %d\t", i);
 			printProcInfo();
-			Sleep(200);
+			Sleep(20);
 		}
 	}
+	std::cout << "time: " << clock() - time << "\n";
+
+	system("pause");
 }
 
 void printProcInfo() {

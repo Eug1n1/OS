@@ -12,7 +12,7 @@ int main()
 		if (i % 1000 == 0) {
 			printf("i: %d\t", i);
 			printProcInfo();
-			Sleep(20);
+			Sleep(200);
 		}
 	}
 	std::cout << "time: " << clock() - time << "\n";

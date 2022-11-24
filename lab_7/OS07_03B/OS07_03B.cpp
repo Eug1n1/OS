@@ -15,7 +15,7 @@ int main()
 			ReleaseMutex(mutex);
 		}
 
-		printf("OS07_02B:\ti: %d\tpid:\t%d\n", i, pid);
+		printf("OS07_03B:\ti: %d\tpid:\t%d\n", i, pid);
 		Sleep(100);
 	}
 

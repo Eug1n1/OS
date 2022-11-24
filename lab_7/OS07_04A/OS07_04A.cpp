@@ -15,7 +15,7 @@ int main()
 			ReleaseSemaphore(semaphore, 1, NULL);
 		}
 
-		printf("OS07_02A:\ti: %d\tpid:\t%d\n", i, pid);
+		printf("OS07_04A:\ti: %d\tpid:\t%d\n", i, pid);
 		Sleep(100);
 	}
 

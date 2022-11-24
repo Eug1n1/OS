@@ -47,7 +47,7 @@ int main()
 	return EXIT_SUCCESS;
 }
 
-HANDLE WINAPI createThread(LPTHREAD_START_ROUTINE func, char* thread_name)
+HANDLE createThread(LPTHREAD_START_ROUTINE func, char* thread_name)
 {
 	DWORD thread_id = NULL;
 	HANDLE thread = CreateThread(NULL, 0, func, thread_name, 0, &thread_id);
@@ -59,7 +59,7 @@ HANDLE WINAPI createThread(LPTHREAD_START_ROUTINE func, char* thread_name)
 	return thread;
 }
 
-void loop(char* displayed_name) {
+void WINAPI loop(char* displayed_name) {
 	int pid = GetCurrentProcessId();
 	int tid = GetCurrentThreadId();
 

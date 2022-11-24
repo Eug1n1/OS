@@ -51,7 +51,7 @@ void WINAPI loop(char* displayed_name) {
 			EnterCriticalSectionAssem();
 		}
 
-		printf("%s:\ti: %d, pid: %d, tid: %u\n", displayed_name, i, pid, tid);
+		printf("%s:\ti: %d\tpid: %d\ttid: %u\tcheck: %d\n", displayed_name, i, pid, tid, check);
 
 		if (i == 60) {
 			LeaveCriticalSectionAssem();
@@ -67,6 +67,8 @@ void EnterCriticalSectionAssem()
 {
 	//Префикс lock, помещенный перед командой, устанавливает сигнал на линии LOCK системной шины и запрещает доступ к шине другим процессорам на время выполнения данной команды.
 	//Команда BTS сохраняет значение бита, из первого операнда со смещением, указанным вторым операндом, во флаге CF, а затем устанавливает этот бит в 1.
+
+	// нулевой бит переменной check ставиться в значение 1
 	_asm
 	{
 	CriticalSection:
@@ -78,5 +80,7 @@ void EnterCriticalSectionAssem()
 void LeaveCriticalSectionAssem()
 {
 	//Команда BTR сохраняет значение бита, из первого операнда со смещением, указанным вторым операндом, во флаге CF, а затем обнуляет этот бит.
+
+	// нулевой бит переменной check ставиться в значение 0
 	_asm lock btr check, 0
 }

@@ -9,7 +9,7 @@ HANDLE createThread(LPTHREAD_START_ROUTINE func, char* thread_name);
 void EnterCriticalSectionAssem();
 void LeaveCriticalSectionAssem();
 
-int check = 0;
+int check;
 
 int main()
 {
@@ -80,7 +80,7 @@ void EnterCriticalSectionAssem()
 void LeaveCriticalSectionAssem()
 {
 	//Команда BTR сохраняет значение бита, из первого операнда со смещением, указанным вторым операндом, во флаге CF, а затем обнуляет этот бит.
-
+	
 	// нулевой бит переменной check ставиться в значение 0
 	_asm lock btr check, 0
 }

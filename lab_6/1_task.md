@@ -1,3 +1,4 @@
+### wmic
 ```bash
 wmic memorychip get banklabel,capacity,speed,manufacturer
 ```
@@ -8,6 +9,7 @@ P0 CHANNEL A  4294967296  Samsung       2667
 P0 CHANNEL B  4294967296  Samsung       2667
 ```
 
+### Get-WmiObject
 ```bash
 Get-WmiObject -Class "Win32_PhysicalMemory"
 ```
@@ -34,6 +36,7 @@ DataWidth            : 64
 ...
 ```
 
+### systeminfo
 ```bash
 systeminfo | findstr "Memory"
 ```
@@ -46,5 +49,5 @@ Virtual Memory: Available: 3,577 MB
 Virtual Memory: In Use:    6,355 MB
 ```
 
-perfomance monitor
+### perfomance monitor
 ![memory_info_perfomance_monitor](./memory_info_perfomance_monitor.png)

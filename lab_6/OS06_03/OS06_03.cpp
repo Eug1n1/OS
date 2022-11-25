@@ -5,7 +5,7 @@
 
 int main()
 {
-	setlocale(LC_ALL, "windows1251");
+	setlocale(LC_ALL, "rus");
 
 	int page_count = 256;
 	int page_size;
@@ -17,7 +17,7 @@ int main()
 
 	page_size = system_info.dwPageSize;
 	memory_size = page_count * page_size;
-
+	
 	virtArray = (int*)VirtualAlloc(NULL, memory_size, MEM_COMMIT, PAGE_READWRITE);
 
 	for (int i = 0; i < memory_size / sizeof(int); i++)
@@ -30,7 +30,7 @@ int main()
 	int char3 = 0xec;
 
 	int index = (char1 * page_size + ((char2 << 4) | (char3 >> 4))) / sizeof(int);
-	std::cout << virtArray[index] << std::endl;
+	std::cout << std::hex << virtArray[index] << std::endl;
 
 	if (VirtualFree(virtArray, NULL, MEM_RELEASE)) {
 		std::cout << "Error free" << std::endl;
@@ -39,6 +39,6 @@ int main()
 
 // Ш 216 D8 216 * 4096 = 884736 first byte of 216's page
 // у 243 F3 11110011 => 111100111110 3902 F3E offset
-// м 236 EC 11101100 => ^
+// м 236 EC 11101100 => |       |  |
 
-// (884736 + 3902) / 4 (sizeof(int) = 4) = 222159 
+// (884736 + 3902) / 4 (sizeof(int) = 4) = 222159 d8e3fe

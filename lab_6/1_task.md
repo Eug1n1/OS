@@ -47,4 +47,4 @@ Virtual Memory: In Use:    6,355 MB
 ```
 
 perfomance monitor
-[memory_info_perfomance_monitor](./memory_info_perfomance_monitor.png)
+![memory_info_perfomance_monitor](./memory_info_perfomance_monitor.png)

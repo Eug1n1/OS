@@ -6,7 +6,7 @@ void sh(HANDLE pheap);
 int main()
 {
 	int* array;
-	HANDLE heap = HeapCreate(HEAP_NO_SERIALIZE | HEAP_ZERO_MEMORY, 4096, 0);
+	HANDLE heap = HeapCreate(HEAP_NO_SERIALIZE | HEAP_ZERO_MEMORY, 4096 * 1024, 0);
 
 	sh(heap);
 

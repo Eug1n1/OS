@@ -1,10 +1,10 @@
-### process memory structure (/proc)
+### Process memory structure (/proc)
 
 ```bash
 cat /proc/<pid>/maps
 ```
 
-### process memory structure (pmap)
+### Process memory structure (pmap)
 
 To see common info:
 ```bash
@@ -26,7 +26,7 @@ To have all info:
 pmap -XX <pid>
 ```
 
-### get program sections info
+### Get program sections info
 
 - .data - initialized data
 - .text - code

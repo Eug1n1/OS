@@ -1,8 +1,0 @@
-﻿  OS05_01.cpp
-C:\Users\eug1n1\Univer\os\lab_5\OS05_01\OS05_01.cpp(72,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
-C:\Users\eug1n1\Univer\os\lab_5\OS05_01\OS05_01.cpp(72,9): message : consider using '%zd' in the format string
-  Generating code
-  Previous IPDB not found, fall back to full compilation.
-  All 127 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Finished generating code
-  OS05_01.vcxproj -> C:\Users\eug1n1\Univer\os\lab_5\x64\Release\OS05_01.exe

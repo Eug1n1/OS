@@ -8,8 +8,8 @@ int main()
 
 	bool isDisplayed = false;
 	int8_t previous_second = 0;
-	unsigned long i;
 
+	unsigned long i;
 
 	for (i = 0; (elapsed_seconds = std::chrono::system_clock::now() - start).count() < 15; i++) {
 

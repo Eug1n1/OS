@@ -11,7 +11,7 @@ int main() {
     printf(
         "%d.%d.%d %d:%d:%d\n", 
         timeinfo->tm_mday,
-        timeinfo->tm_mon,
+        timeinfo->tm_mon + 1,
         timeinfo->tm_year,
         timeinfo->tm_hour,
         timeinfo->tm_min,

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <windows.h>
 
-#define SLEEP_DELAY 1000
+#define SLEEP_DELAY 100
 
 void WINAPI loop(char* name);
 HANDLE createThread(LPTHREAD_START_ROUTINE func, char* thread_name);
